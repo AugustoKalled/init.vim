@@ -53,33 +53,33 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 noremap <S>k <NOP>
 
-" Mapeia a tecla <F3> para criar uma estrutura de programa em C++
+" Maps the <F3> key to create a C++ program structure
 au BufNewFile,BufRead *.cpp map <F3> a#include <iostream><CR><CR>using namespace std;<CR><CR>int main() {<CR>cout << "Ola Mundo!\n";<CR>return 0;<CR>}
 
-" Mapeia a tecla <F3> para criar uma estrutura de programa em Java
+" Maps the <F3> key to create a Java program structure
 au BufNewFile,BufRead *.java map <F3> apublic class <C-R>=expand("%:t:r")<CR> {<CR>public static void main (String[] args) {<CR>System.out.println("Ola Mundo!");<CR>}<CR>}<F4>
 
-" Mapeia a tecla <F4> para indentar o codigo do programa
+" Map the <F4> key to indent the program code
 map  <F4> gg=G
 imap <F4> <ESC>gg=G
 
-" Mapeia a tecla <F5> para compilar e executar o programa em C++
+" Maps the <F5> key to compile and run the C++ program
 au BufNewFile,BufRead *.cpp map <F5> :w<CR>:!clear && echo "Compilando % ..." && echo && g++ "%" -o "%<" && clear && ./"%<"<CR>
 au BufNewFile,BufRead *.cpp imap <F5> <ESC>:w<CR>:!clear && echo "Compilando % ..." && echo && g++ "%" -o "%<" && clear && ./"%<"<CR>
 
-" Mapeia a tecla <F5> para compilar e executar o progrma em Java
+" Maps the <F5> key to compile and run the program in Java
 au BufNewFile,BufRead *.java map <F5> :w<CR>:!clear && echo "Compilando % ..." && echo && javac "%" && echo "Executando % ..." && echo && java "%<"<CR>
 au BufNewFile,BufRead *.java imap <F5> <ESC>:w<CR>:!clear && echo "Compilando % ..." && echo && javac "%" && echo "Executando % ..." && echo && java "%<"<CR>
 
-" Mapeia a tecla <F6> para executar o programa compilado em C++
+" Maps the <F6> key to run the C++ compiled program
 au BufNewFile,BufRead *.cpp map <F6> :w<CR>:!clear && ./"%<"<CR>
 au BufNewFile,BufRead *.cpp imap <F6> <ESC>:w<CR>:!clear && ./"%<"<CR>
 
-" Mapeia a tecla <F6> para executar o programa compilado em Java
+" Maps the <F6> key to run the compiled Java program
 au BufNewFile,BufRead *.java map <F6> :w<CR>:!clear && java "%<"<CR>
 au BufNewFile,BufRead *.java imap <F6> <ESC>:w<CR>:!clear && java "%<"<CR>
 
-" Mapeia a combinacao de teclas <F7> para salvar o arquivo e sair do editor VIM
+" Maps the <F7> key combination to save the file and exit the VIM editor
 map  <F7> :wqa!<CR>
 imap <F7> <ESC>:wqa!<CR>
 
@@ -110,25 +110,6 @@ set autoread         " Update vim after file update from outside
 filetype on          " Detect and set the filetype option and trigger the FileType Event
 filetype plugin on   " Load the plugin file for the file type, if any
 filetype indent on   " Load the indent file for the file type, if any
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
